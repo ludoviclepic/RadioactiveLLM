@@ -1,0 +1,6 @@
+\venv
+\__pycache__
+\data
+\model_checkpoints/
+\finetuned_gpt2/
+finetuned_gpt2/
