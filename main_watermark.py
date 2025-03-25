@@ -1,7 +1,8 @@
 """
 python main_watermark.py \
-    --nwm_input processed/train_nonwatermarked.jsonl\
-    --output_file training_data/merged_train.jsonl \
+    --nwm_input processed_20/train_nonwatermarked.jsonl\
+    --wm_input processed_20/train_watermarked.jsonl\
+    --output_file training_data_20/merged_train.jsonl \
     --generator maryland
 """
 

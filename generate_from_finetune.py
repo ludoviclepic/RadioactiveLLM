@@ -1,7 +1,7 @@
 """
 python generate_from_finetune.py\
-    --input_file processed/final_test.jsonl\
-    --output_file training_data/generated_output_finegpt2.jsonl\
+    --input_file processed_20/final_test.jsonl\
+    --output_file training_data_20/generated_output_finegpt2.jsonl\
     --sample_size 400\
     --seed 42
 """

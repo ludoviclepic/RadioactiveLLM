@@ -1,8 +1,8 @@
 """
 python process_data.py \
-    --num_samples 10 \
-    --test_samples 5 \
-    --watermark_ratio 0.8
+    --num_samples 500 \
+    --test_samples 400 \
+    --watermark_ratio 0.2
 """
 
 import os
@@ -61,7 +61,7 @@ def main():
     nonwatermarked_prompts = training_samples[num_watermarked:]
     
     # Ensure output directory exists
-    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "processed")
+    out_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "processed_20")
     os.makedirs(out_dir, exist_ok=True)
     
     write_jsonl(os.path.join(out_dir, "train_watermarked.jsonl"), watermarked_prompts)

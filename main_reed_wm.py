@@ -7,12 +7,12 @@
 
 """
 python main_reed_wm.py \
-    --model_name "finetuned_gpt2"\
-    --dataset_path "training_data/generated_output_finegpt2.jsonl" \
+    --model_name "finetuned_gpt2_20"\
+    --dataset_path "training_data_20/generated_output_finegpt2.jsonl" \
     --method_detect maryland \
     --nsamples 400 \
-    --batch_size 16 \
-    --output_dir final_output/ \
+    --batch_size 1 \
+    --output_dir final_output_20/ \
     --ngram 4
 """
 
@@ -192,8 +192,8 @@ def main(args):
     # (re)start experiment
     os.makedirs(args.output_dir, exist_ok=True)
     start_point = 0 # if resuming, start from the last line of the file
-    if os.path.exists(os.path.join(args.output_dir, f"results_kgrams.jsonl")):
-        with open(os.path.join(args.output_dir, f"results_kgrams.jsonl"), "r") as f:
+    if os.path.exists(os.path.join(args.output_dir, f"results_kgrams2.jsonl")):
+        with open(os.path.join(args.output_dir, f"results_kgrams2.jsonl"), "r") as f:
             for _ in f:
                 start_point += 1
     print(f"Starting from {start_point}")
@@ -211,8 +211,8 @@ def main(args):
     dic = {}
     dic_r = {}
     # check if file does not already exist
-    if not os.path.exists(os.path.join(args.output_dir, f"results_kgrams.jsonl")):
-        with open(os.path.join(args.output_dir, f"results_kgrams.jsonl"), "a") as f:
+    if not os.path.exists(os.path.join(args.output_dir, f"results_kgrams2.jsonl")):
+        with open(os.path.join(args.output_dir, f"results_kgrams2.jsonl"), "a") as f:
             for i, x in enumerate(dataloader):
                 if i %10 == 0:
                     print(f"iteraton: {i}")
